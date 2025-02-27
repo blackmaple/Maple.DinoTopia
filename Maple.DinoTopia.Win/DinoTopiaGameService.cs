@@ -25,10 +25,10 @@ namespace Maple.DinoTopia.Win
         }
 
 
-        protected sealed override async ValueTask F9_KeyDown()
-        {
-            await this.UITaskAsync(p => new DinoTopiaGameEnv(p).Test()).ConfigureAwait(false);
-        }
+        //protected sealed override async ValueTask F9_KeyDown()
+        //{
+        //    await this.UITaskAsync(p => new DinoTopiaGameEnv(p).Test()).ConfigureAwait(false);
+        //}
         protected sealed override async ValueTask F8_KeyDown()
         {
             await this.UITaskAsync(p => new DinoTopiaGameEnv(p).Test2()).ConfigureAwait(false);
