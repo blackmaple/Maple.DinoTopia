@@ -1,3 +1,5 @@
+using Maple.MonoGameAssistant.Core;
+
 namespace Maple.DinoTopia.Metadata
 {
     /// <summary>
@@ -17,7 +19,7 @@ namespace Maple.DinoTopia.Metadata
 
             public static implicit operator Ptr_Game(System.IntPtr ptr) => new Ptr_Game(ptr);
             public static implicit operator System.IntPtr(Ptr_Game ptr) => ptr.m_Pointer;
-            public static implicit operator bool (Ptr_Game ptr) => ptr.m_Pointer != System.IntPtr.Zero;
+            public static implicit operator bool(Ptr_Game ptr) => ptr.m_Pointer != System.IntPtr.Zero;
         }
 
         /// <summary>
@@ -30,17 +32,17 @@ namespace Maple.DinoTopia.Metadata
             /// struct ["mscorlib.dll"."System"."Int64"]
             /// </summary>
             /// <returns>struct System.Int64</returns>
-             /*
-            public const System.Int64 TICK_MAX_TIME = 5; 
+            /*
+           public const System.Int64 TICK_MAX_TIME = 5; 
 */
             /// <summary>
             /// 0x0 System.Action OnQuit
             /// class ["mscorlib.dll"."System"."Action"]
             /// </summary>
             /// <returns>class System.Action</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("OnQuit", "System.Action")]
-            public static partial nint ON_QUIT { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("OnQuit", "System.Action")]
+           public static partial nint ON_QUIT { get; set; } 
 */
 
             /// <summary>
@@ -48,19 +50,19 @@ namespace Maple.DinoTopia.Metadata
             /// class ["Assembly-CSharp.dll"."Game.Script.Common"."Game"]
             /// </summary>
             /// <returns>class Game.Script.Common.Game</returns>
-             /*
+
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("_instance", "Game.Script.Common.Game")]
-            public static partial nint _INSTANCE { get; set; } 
-*/
+            public static partial Game.Ptr_Game _INSTANCE { get; }
+
 
             /// <summary>
             /// 0x10 System.Action<System.String> OnAddDialog
             /// class ["mscorlib.dll"."System"."Action`1"]
             /// </summary>
             /// <returns>class System.Action<System.String></returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("OnAddDialog", "System.Action<System.String>")]
-            public partial nint ON_ADD_DIALOG { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("OnAddDialog", "System.Action<System.String>")]
+           public partial nint ON_ADD_DIALOG { get; set; } 
 */
 
             /// <summary>
@@ -68,9 +70,9 @@ namespace Maple.DinoTopia.Metadata
             /// enum ["Assembly-CSharp.dll"."Game.Script.Common"."OnLineState"]
             /// </summary>
             /// <returns>enum Game.Script.Common.OnLineState</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("<OnLineState>k__BackingField", "Game.Script.Common.OnLineState")]
-            public partial Game.Script.Common.OnLineState ON_LINE_STATE { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("<OnLineState>k__BackingField", "Game.Script.Common.OnLineState")]
+           public partial Game.Script.Common.OnLineState ON_LINE_STATE { get; set; } 
 */
 
             /// <summary>
@@ -78,9 +80,9 @@ namespace Maple.DinoTopia.Metadata
             /// enum ["Assembly-CSharp.dll"."Game.Script.Common"."GameMode"]
             /// </summary>
             /// <returns>enum Game.Script.Common.GameMode</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("<Mode>k__BackingField", "Game.Script.Common.GameMode")]
-            public partial Game.Script.Common.GameMode MODE { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("<Mode>k__BackingField", "Game.Script.Common.GameMode")]
+           public partial Game.Script.Common.GameMode MODE { get; set; } 
 */
 
             /// <summary>
@@ -88,9 +90,9 @@ namespace Maple.DinoTopia.Metadata
             /// enum ["Assembly-CSharp.dll"."Game.Script.Common"."GamePlatform"]
             /// </summary>
             /// <returns>enum Game.Script.Common.GamePlatform</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("<Platform>k__BackingField", "Game.Script.Common.GamePlatform")]
-            public partial Game.Script.Common.GamePlatform PLATFORM { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("<Platform>k__BackingField", "Game.Script.Common.GamePlatform")]
+           public partial Game.Script.Common.GamePlatform PLATFORM { get; set; } 
 */
 
             /// <summary>
@@ -98,9 +100,9 @@ namespace Maple.DinoTopia.Metadata
             /// class ["mscorlib.dll"."System.Collections.Generic"."Dictionary`2"]
             /// </summary>
             /// <returns>class System.Collections.Generic.Dictionary<System.String , Game.Script.Common.World></returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("_worlds", "System.Collections.Generic.Dictionary<System.String,Game.Script.Common.World>")]
-            public partial nint _WORLDS { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("_worlds", "System.Collections.Generic.Dictionary<System.String,Game.Script.Common.World>")]
+           public partial nint _WORLDS { get; set; } 
 */
 
             /// <summary>
@@ -108,9 +110,9 @@ namespace Maple.DinoTopia.Metadata
             /// class ["mscorlib.dll"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("<LoadMapName>k__BackingField", "System.String")]
-            public partial nint LOAD_MAP_NAME { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("<LoadMapName>k__BackingField", "System.String")]
+           public partial nint LOAD_MAP_NAME { get; set; } 
 */
 
             /// <summary>
@@ -118,19 +120,19 @@ namespace Maple.DinoTopia.Metadata
             /// class ["mscorlib.dll"."System.Collections.Generic"."Dictionary`2"]
             /// </summary>
             /// <returns>class System.Collections.Generic.Dictionary<System.Type , Game.Script.Subsystem.GameSubsystem></returns>
-             /*
+
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("_subsystems", "System.Collections.Generic.Dictionary<System.Type,Game.Script.Subsystem.GameSubsystem>")]
-            public partial nint _SUBSYSTEMS { get; set; } 
-*/
+            public partial PMonoDictionary_OptimizationDefault<PMonoObject, PMonoObject> _SUBSYSTEMS { get; set; }
+
 
             /// <summary>
             /// 0x40 Game.Script.Character.FightCharacter _myController
             /// class ["Assembly-CSharp.dll"."Game.Script.Character"."FightCharacter"]
             /// </summary>
             /// <returns>class Game.Script.Character.FightCharacter</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("_myController", "Game.Script.Character.FightCharacter")]
-            public partial nint _MY_CONTROLLER { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("_myController", "Game.Script.Character.FightCharacter")]
+           public partial nint _MY_CONTROLLER { get; set; } 
 */
 
             /// <summary>
@@ -138,9 +140,9 @@ namespace Maple.DinoTopia.Metadata
             /// class ["Assembly-CSharp.dll"."Game.Script.Map"."MapBk"]
             /// </summary>
             /// <returns>class Game.Script.Map.MapBk</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("_mapBk", "Game.Script.Map.MapBk")]
-            public partial nint _MAP_BK { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("_mapBk", "Game.Script.Map.MapBk")]
+           public partial nint _MAP_BK { get; set; } 
 */
 
             /// <summary>
@@ -148,9 +150,9 @@ namespace Maple.DinoTopia.Metadata
             /// class ["mscorlib.dll"."System.Threading"."Thread"]
             /// </summary>
             /// <returns>class System.Threading.Thread</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("<MainThread>k__BackingField", "System.Threading.Thread")]
-            public partial nint MAIN_THREAD { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("<MainThread>k__BackingField", "System.Threading.Thread")]
+           public partial nint MAIN_THREAD { get; set; } 
 */
 
             /// <summary>
@@ -158,9 +160,9 @@ namespace Maple.DinoTopia.Metadata
             /// class ["mscorlib.dll"."System"."Action`1"]
             /// </summary>
             /// <returns>class System.Action<System.Type></returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("OnItReflection", "System.Action<System.Type>")]
-            public partial nint ON_IT_REFLECTION { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("OnItReflection", "System.Action<System.Type>")]
+           public partial nint ON_IT_REFLECTION { get; set; } 
 */
         }
 
