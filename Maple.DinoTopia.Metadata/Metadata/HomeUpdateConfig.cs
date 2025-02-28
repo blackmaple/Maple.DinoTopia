@@ -1,3 +1,5 @@
+using Maple.MonoGameAssistant.Core;
+
 namespace Maple.DinoTopia.Metadata
 {
     /// <summary>
@@ -17,7 +19,7 @@ namespace Maple.DinoTopia.Metadata
 
             public static implicit operator Ptr_HomeUpdateConfig(System.IntPtr ptr) => new Ptr_HomeUpdateConfig(ptr);
             public static implicit operator System.IntPtr(Ptr_HomeUpdateConfig ptr) => ptr.m_Pointer;
-            public static implicit operator bool (Ptr_HomeUpdateConfig ptr) => ptr.m_Pointer != System.IntPtr.Zero;
+            public static implicit operator bool(Ptr_HomeUpdateConfig ptr) => ptr.m_Pointer != System.IntPtr.Zero;
         }
 
         /// <summary>
@@ -30,29 +32,29 @@ namespace Maple.DinoTopia.Metadata
             /// class ["mscorlib.dll"."System.Collections.Generic"."Dictionary`2"]
             /// </summary>
             /// <returns>class System.Collections.Generic.Dictionary<System.String , HomeUpdateConfig></returns>
-             /*
+
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("mDic", "System.Collections.Generic.Dictionary<System.String,HomeUpdateConfig>")]
-            public static partial nint M_DIC { get; set; } 
-*/
+            public static partial PMonoDictionary_OptimizationDefault<PMonoString, HomeUpdateConfig.Ptr_HomeUpdateConfig> M_DIC { get; set; }
+
 
             /// <summary>
             /// 0x10 System.String Id
             /// class ["mscorlib.dll"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
+
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("Id", "System.String")]
-            public partial nint ID { get; set; } 
-*/
+            public partial PMonoString ID { get; set; }
+
 
             /// <summary>
             /// 0x18 System.String[] DescInside
             /// class ["mscorlib.dll"."System"."String[]"]
             /// </summary>
             /// <returns>class System.String[]</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("DescInside", "System.String[]")]
-            public partial nint DESC_INSIDE { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("DescInside", "System.String[]")]
+           public partial nint DESC_INSIDE { get; set; } 
 */
 
             /// <summary>
@@ -60,9 +62,9 @@ namespace Maple.DinoTopia.Metadata
             /// class ["mscorlib.dll"."System"."Int32[]"]
             /// </summary>
             /// <returns>class System.Int32[]</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("ConditionType", "System.Int32[]")]
-            public partial nint CONDITION_TYPE { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("ConditionType", "System.Int32[]")]
+           public partial nint CONDITION_TYPE { get; set; } 
 */
 
             /// <summary>
@@ -70,9 +72,9 @@ namespace Maple.DinoTopia.Metadata
             /// class ["mscorlib.dll"."System"."String[]"]
             /// </summary>
             /// <returns>class System.String[]</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("ConditionPara", "System.String[]")]
-            public partial nint CONDITION_PARA { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("ConditionPara", "System.String[]")]
+           public partial nint CONDITION_PARA { get; set; } 
 */
 
             /// <summary>
@@ -80,9 +82,9 @@ namespace Maple.DinoTopia.Metadata
             /// class ["mscorlib.dll"."System"."Int32[]"]
             /// </summary>
             /// <returns>class System.Int32[]</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("RewardType", "System.Int32[]")]
-            public partial nint REWARD_TYPE { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("RewardType", "System.Int32[]")]
+           public partial nint REWARD_TYPE { get; set; } 
 */
 
             /// <summary>
@@ -90,9 +92,9 @@ namespace Maple.DinoTopia.Metadata
             /// class ["mscorlib.dll"."System"."String[]"]
             /// </summary>
             /// <returns>class System.String[]</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("RewardPara", "System.String[]")]
-            public partial nint REWARD_PARA { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("RewardPara", "System.String[]")]
+           public partial nint REWARD_PARA { get; set; } 
 */
         }
 
@@ -105,35 +107,35 @@ namespace Maple.DinoTopia.Metadata
             /// static  System.Collections.Generic.Dictionary<System.String , HomeUpdateConfig> get_dic()
             /// </summary>
             /// <returns>class System.Collections.Generic.Dictionary<System.String , HomeUpdateConfig></returns>
-             /*
+
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_dic", "System.Collections.Generic.Dictionary<System.String,HomeUpdateConfig>", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public static partial nint GET_DIC(); 
-*/
+            public static partial PMonoDictionary_OptimizationDefault<PMonoString, HomeUpdateConfig.Ptr_HomeUpdateConfig> GET_DIC();
+
             /// <summary>
             /// static  System.Void OnLoad(System.Collections.Generic.List<CSVHelper.CsvRow> rows)
             /// </summary>
             /// <param name = "rows">class System.Collections.Generic.List<CSVHelper.CsvRow></param>
             /// <returns>struct System.Void</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("OnLoad", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("System.Collections.Generic.List<CSVHelper.CsvRow>", 0)]
-            public static partial void ON_LOAD(nint rows); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("OnLoad", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("System.Collections.Generic.List<CSVHelper.CsvRow>", 0)]
+           public static partial void ON_LOAD(nint rows); 
 */
             /// <summary>
             /// static  System.Void OnQuit()
             /// </summary>
             /// <returns>struct System.Void</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("OnQuit", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public static partial void ON_QUIT(); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("OnQuit", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           public static partial void ON_QUIT(); 
 */
             /// <summary>
             ///   System.Void .ctor()
             /// </summary>
             /// <returns>struct System.Void</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute(".ctor", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial void CTOR(); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute(".ctor", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           public partial void CTOR(); 
 */
         }
     }

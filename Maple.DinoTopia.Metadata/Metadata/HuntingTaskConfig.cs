@@ -1,151 +1,182 @@
-
 using Maple.MonoGameAssistant.Core;
-using Maple.MonoGameAssistant.MonoCollectorDataV2;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Maple.DinoTopia.Metadata
 {
-    
-    
     /// <summary>
     /// class ["Assembly-CSharp.dll".""."HuntingTaskConfig"]
     /// [System.Object]
-    /// 
     /// </summary>
-    //[Maple.MonoGameAssistant.MonoCollectorDataV2.MonoCollectorSettingsAttribute([65, 115, 115, 101, 109, 98, 108, 121, 45, 67, 83, 104, 97, 114, 112, 46, 100, 108, 108], 0x02000021U)]
-    [Maple.MonoGameAssistant.MonoCollectorDataV2.MonoCollectorSettingsAttribute([65, 115, 115, 101, 109, 98, 108, 121, 45, 67, 83, 104, 97, 114, 112, 46, 100, 108, 108], [], [72, 117, 110, 116, 105, 110, 103, 84, 97, 115, 107, 67, 111, 110, 102, 105, 103])]
-                
-    //  class static System.Collections.Generic.Dictionary<System.String,HuntingTaskConfig> mDic
-    //  [MonoCollectorSearchFieldAttribute(typeof(nint),"mDic", "M_DIC", true)]
-                
-    // class 0x10 System.String Id
-    // [MonoCollectorSearchFieldAttribute(typeof(nint),"Id", "ID")]
-            
-    // class 0x18 System.String NameInside
-    // [MonoCollectorSearchFieldAttribute(typeof(nint),"NameInside", "NAME_INSIDE")]
-            
-    // class 0x20 System.String Name
-    // [MonoCollectorSearchFieldAttribute(typeof(nint),"Name", "NAME")]
-            
-    // struct 0x28 System.Int32 Level
-    // [MonoCollectorSearchFieldAttribute(typeof(System.Int32),"Level", "LEVEL")]
-            
-    // struct 0x2C System.Int32 Type
-    // [MonoCollectorSearchFieldAttribute(typeof(System.Int32),"Type", "TYPE")]
-            
-    // struct 0x30 System.Int32 FinishTime
-    // [MonoCollectorSearchFieldAttribute(typeof(System.Int32),"FinishTime", "FINISH_TIME")]
-            
-    // class 0x38 System.Single[] TaskCompletionProbability
-    // [MonoCollectorSearchFieldAttribute(typeof(nint),"TaskCompletionProbability", "TASK_COMPLETION_PROBABILITY")]
-            
-    // class 0x40 System.String[] TaskCompletionReward
-    // [MonoCollectorSearchFieldAttribute(typeof(nint),"TaskCompletionReward", "TASK_COMPLETION_REWARD")]
-            
-    // struct 0x48 System.Int32 Weight
-    // [MonoCollectorSearchFieldAttribute(typeof(System.Int32),"Weight", "WEIGHT")]
-            
-    // class 0x50 System.String DropID
-    // [MonoCollectorSearchFieldAttribute(typeof(nint),"DropID", "DROP_ID")]
+    [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassParentMetadataAttribute<Maple.MonoGameAssistant.MetadataExtensions.MetadataCollector.ClassMetadataCollector<Ptr_HuntingTaskConfig>, Ptr_HuntingTaskConfig>]
+    [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassModelMetadataAttribute("Assembly-CSharp.dll", "", "HuntingTaskConfig", "HuntingTaskConfig")]
     public partial class HuntingTaskConfig
-    { 
-        //public const string Const_ImageName = "Assembly-CSharp.dll";
-        //public static byte[] Static_ImageName { get; } = [65, 115, 115, 101, 109, 98, 108, 121, 45, 67, 83, 104, 97, 114, 112, 46, 100, 108, 108];
-
-        //public const string Const_Namespace = "";
-        //public static byte[] Static_Namespace { get; } = [];
-
-        //public const string Const_ClassName = "HuntingTaskConfig";
-        //public static byte[] Static_ClassName { get; } = [72, 117, 110, 116, 105, 110, 103, 84, 97, 115, 107, 67, 111, 110, 102, 105, 103];
-
-        //public const uint Const_TypeToken = 0x02000021U;
-
-
-
-        
-            
-        
-
-        
+    {
         [System.Runtime.InteropServices.StructLayoutAttribute(System.Runtime.InteropServices.LayoutKind.Sequential)]
-        public readonly unsafe partial struct Ptr_HuntingTaskConfig(nint ptr)
+        public unsafe readonly partial struct Ptr_HuntingTaskConfig(System.IntPtr ptr) : Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.IPtrMetadata
         {
-
             [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.SysInt)]
-            readonly nint _ptr = ptr;
-            public static implicit operator Ptr_HuntingTaskConfig(nint ptr) => new(ptr);
-            public static implicit operator nint(Ptr_HuntingTaskConfig obj) => obj._ptr;
-            public static implicit operator bool(Ptr_HuntingTaskConfig obj)=> obj.Valid();
- 
-            public override string ToString()
-            {
-                return _ptr.ToString("X8");
-            }
+            readonly System.IntPtr m_Pointer = ptr;
+            public System.IntPtr Ptr => m_Pointer;
 
-            [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
-            public bool Valid() => _ptr != nint.Zero;
-
-
-
+            public static implicit operator Ptr_HuntingTaskConfig(System.IntPtr ptr) => new Ptr_HuntingTaskConfig(ptr);
+            public static implicit operator System.IntPtr(Ptr_HuntingTaskConfig ptr) => ptr.m_Pointer;
+            public static implicit operator bool(Ptr_HuntingTaskConfig ptr) => ptr.m_Pointer != System.IntPtr.Zero;
         }
 
-    }
+        /// <summary>
+        /// class ["Assembly-CSharp.dll".""."HuntingTaskConfig"]
+        /// </summary>
+        partial struct Ptr_HuntingTaskConfig
+        {
+            /// <summary>
+            /// 0x0 System.Collections.Generic.Dictionary<System.String , HuntingTaskConfig> mDic
+            /// class ["mscorlib.dll"."System.Collections.Generic"."Dictionary`2"]
+            /// </summary>
+            /// <returns>class System.Collections.Generic.Dictionary<System.String , HuntingTaskConfig></returns>
+
+            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("mDic", "System.Collections.Generic.Dictionary<System.String,HuntingTaskConfig>")]
+            public static partial PMonoDictionary_OptimizationDefault<PMonoString, HuntingTaskConfig.Ptr_HuntingTaskConfig> M_DIC { get; set; }
+
+
+            /// <summary>
+            /// 0x10 System.String Id
+            /// class ["mscorlib.dll"."System"."String"]
+            /// </summary>
+            /// <returns>class System.String</returns>
+
+            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("Id", "System.String")]
+            public partial PMonoString ID { get; set; }
+
+
+            /// <summary>
+            /// 0x18 System.String NameInside
+            /// class ["mscorlib.dll"."System"."String"]
+            /// </summary>
+            /// <returns>class System.String</returns>
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("NameInside", "System.String")]
+           public partial nint NAME_INSIDE { get; set; } 
+*/
+
+            /// <summary>
+            /// 0x20 System.String Name
+            /// class ["mscorlib.dll"."System"."String"]
+            /// </summary>
+            /// <returns>class System.String</returns>
+
+            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("Name", "System.String")]
+            public partial PMonoString NAME { get; set; }
+
+
+            /// <summary>
+            /// 0x28 System.Int32 Level
+            /// struct ["mscorlib.dll"."System"."Int32"]
+            /// </summary>
+            /// <returns>struct System.Int32</returns>
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("Level", "System.Int32")]
+           public partial System.Int32 LEVEL { get; set; } 
+*/
+
+            /// <summary>
+            /// 0x2C System.Int32 Type
+            /// struct ["mscorlib.dll"."System"."Int32"]
+            /// </summary>
+            /// <returns>struct System.Int32</returns>
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("Type", "System.Int32")]
+           public partial System.Int32 TYPE { get; set; } 
+*/
+
+            /// <summary>
+            /// 0x30 System.Int32 FinishTime
+            /// struct ["mscorlib.dll"."System"."Int32"]
+            /// </summary>
+            /// <returns>struct System.Int32</returns>
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("FinishTime", "System.Int32")]
+           public partial System.Int32 FINISH_TIME { get; set; } 
+*/
+
+            /// <summary>
+            /// 0x38 System.Single[] TaskCompletionProbability
+            /// class ["mscorlib.dll"."System"."Single[]"]
+            /// </summary>
+            /// <returns>class System.Single[]</returns>
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("TaskCompletionProbability", "System.Single[]")]
+           public partial nint TASK_COMPLETION_PROBABILITY { get; set; } 
+*/
+
+            /// <summary>
+            /// 0x40 System.String[] TaskCompletionReward
+            /// class ["mscorlib.dll"."System"."String[]"]
+            /// </summary>
+            /// <returns>class System.String[]</returns>
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("TaskCompletionReward", "System.String[]")]
+           public partial nint TASK_COMPLETION_REWARD { get; set; } 
+*/
+
+            /// <summary>
+            /// 0x48 System.Int32 Weight
+            /// struct ["mscorlib.dll"."System"."Int32"]
+            /// </summary>
+            /// <returns>struct System.Int32</returns>
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("Weight", "System.Int32")]
+           public partial System.Int32 WEIGHT { get; set; } 
+*/
+
+            /// <summary>
+            /// 0x50 System.String DropID
+            /// class ["mscorlib.dll"."System"."String"]
+            /// </summary>
+            /// <returns>class System.String</returns>
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("DropID", "System.String")]
+           public partial nint DROP_ID { get; set; } 
+*/
+        }
 
         /// <summary>
-        /// ["Assembly-CSharp.dll".""."HuntingTaskConfig"]
+        /// class ["Assembly-CSharp.dll".""."HuntingTaskConfig"]
         /// </summary>
-        public partial class HuntingTaskConfig
-        { 
-
-            
-            
+        partial struct Ptr_HuntingTaskConfig
+        {
             /// <summary>
-            ///   System.Void .ctor()
+            /// static  System.Collections.Generic.Dictionary<System.String , HuntingTaskConfig> get_dic()
             /// </summary>
-            /// <returns>struct System.Void</returns>
-            /// [Maple.MonoGameAssistant.MonoCollectorDataV2.MonoCollectorMethodAttribute(".ctor")]
-            ///  extern void .CTOR ();
+            /// <returns>class System.Collections.Generic.Dictionary<System.String , HuntingTaskConfig></returns>
 
-            
-            /// <summary>
-            /// static  System.Collections.Generic.Dictionary<System.String,HuntingTaskConfig> get_dic()
-            /// </summary>
-            /// <returns>class System.Collections.Generic.Dictionary<System.String,HuntingTaskConfig></returns>
-            /// [Maple.MonoGameAssistant.MonoCollectorDataV2.MonoCollectorMethodAttribute("get_dic")]
-            /// static extern nint GET_DIC ();
+            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_dic", "System.Collections.Generic.Dictionary<System.String,HuntingTaskConfig>", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+            public static partial PMonoDictionary_OptimizationDefault<PMonoString, HuntingTaskConfig.Ptr_HuntingTaskConfig> GET_DIC();
 
-            
             /// <summary>
             /// static  System.Void OnLoad(System.Collections.Generic.List<CSVHelper.CsvRow> rows)
             /// </summary>
-            /// <param name="rows">class System.Collections.Generic.List<CSVHelper.CsvRow></param>
+            /// <param name = "rows">class System.Collections.Generic.List<CSVHelper.CsvRow></param>
             /// <returns>struct System.Void</returns>
-            /// [Maple.MonoGameAssistant.MonoCollectorDataV2.MonoCollectorMethodAttribute("OnLoad")]
-            /// static extern void ON_LOAD (nint rows);
-
-            
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("OnLoad", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("System.Collections.Generic.List<CSVHelper.CsvRow>", 0)]
+           public static partial void ON_LOAD(nint rows); 
+*/
             /// <summary>
             /// static  System.Void OnQuit()
             /// </summary>
             /// <returns>struct System.Void</returns>
-            /// [Maple.MonoGameAssistant.MonoCollectorDataV2.MonoCollectorMethodAttribute("OnQuit")]
-            /// static extern void ON_QUIT ();
-            
-            
-
-            
-            /// public static partial class Search_HuntingTaskConfig
-            /// {
-            /// 
-            ///     
-            /// 
-            /// }
-
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("OnQuit", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           public static partial void ON_QUIT(); 
+*/
+            /// <summary>
+            ///   System.Void .ctor()
+            /// </summary>
+            /// <returns>struct System.Void</returns>
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute(".ctor", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           public partial void CTOR(); 
+*/
         }
-
-
+    }
 }

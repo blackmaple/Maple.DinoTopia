@@ -1,3 +1,5 @@
+using Maple.MonoGameAssistant.Core;
+
 namespace Maple.DinoTopia.Metadata
 {
     /// <summary>
@@ -17,7 +19,7 @@ namespace Maple.DinoTopia.Metadata
 
             public static implicit operator Ptr_LocalizationSubsystem(System.IntPtr ptr) => new Ptr_LocalizationSubsystem(ptr);
             public static implicit operator System.IntPtr(Ptr_LocalizationSubsystem ptr) => ptr.m_Pointer;
-            public static implicit operator bool (Ptr_LocalizationSubsystem ptr) => ptr.m_Pointer != System.IntPtr.Zero;
+            public static implicit operator bool(Ptr_LocalizationSubsystem ptr) => ptr.m_Pointer != System.IntPtr.Zero;
         }
 
         /// <summary>
@@ -65,91 +67,91 @@ namespace Maple.DinoTopia.Metadata
             /// static  UnityEngine.SystemLanguage get_DefaultLanguage()
             /// </summary>
             /// <returns>enum UnityEngine.SystemLanguage</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_DefaultLanguage", "UnityEngine.SystemLanguage", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public static partial UnityEngine.SystemLanguage GET_DEFAULT_LANGUAGE(); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_DefaultLanguage", "UnityEngine.SystemLanguage", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           public static partial UnityEngine.SystemLanguage GET_DEFAULT_LANGUAGE(); 
 */
             /// <summary>
             /// static  System.String GetLanguage(System.String key)
             /// </summary>
             /// <param name = "key">class System.String</param>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("GetLanguage", "System.String", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("System.String", 0)]
-            public static partial nint GET_LANGUAGE(nint key); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("GetLanguage", "System.String", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("System.String", 0)]
+           public static partial nint GET_LANGUAGE(nint key); 
 */
             /// <summary>
             ///   System.Void .ctor()
             /// </summary>
             /// <returns>struct System.Void</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute(".ctor", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial void CTOR(); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute(".ctor", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           public partial void CTOR(); 
 */
             /// <summary>
             ///   System.String Get(System.String key)
             /// </summary>
             /// <param name = "key">class System.String</param>
             /// <returns>class System.String</returns>
-             /*
+
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("Get", "System.String", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("System.String", 0)]
-            public partial nint GET(nint key); 
-*/
+            public partial PMonoString GET(PMonoString key);
+
             /// <summary>
             ///   UnityEngine.SystemLanguage get_CurLanguage()
             /// </summary>
             /// <returns>enum UnityEngine.SystemLanguage</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_CurLanguage", "UnityEngine.SystemLanguage", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial UnityEngine.SystemLanguage GET_CUR_LANGUAGE(); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_CurLanguage", "UnityEngine.SystemLanguage", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           public partial UnityEngine.SystemLanguage GET_CUR_LANGUAGE(); 
 */
             /// <summary>
             ///   System.Collections.Generic.List<UnityEngine.SystemLanguage> get_Languages()
             /// </summary>
             /// <returns>class System.Collections.Generic.List<UnityEngine.SystemLanguage></returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_Languages", "System.Collections.Generic.List<UnityEngine.SystemLanguage>", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial nint GET_LANGUAGES(); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_Languages", "System.Collections.Generic.List<UnityEngine.SystemLanguage>", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           public partial nint GET_LANGUAGES(); 
 */
             /// <summary>
             ///   System.Boolean IsNeedReplaceSpace(UnityEngine.SystemLanguage language)
             /// </summary>
             /// <param name = "language">enum UnityEngine.SystemLanguage</param>
             /// <returns>struct System.Boolean</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("IsNeedReplaceSpace", "System.Boolean", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("UnityEngine.SystemLanguage", 0)]
-            public partial System.Boolean IS_NEED_REPLACE_SPACE(UnityEngine.SystemLanguage language); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("IsNeedReplaceSpace", "System.Boolean", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("UnityEngine.SystemLanguage", 0)]
+           public partial System.Boolean IS_NEED_REPLACE_SPACE(UnityEngine.SystemLanguage language); 
 */
             /// <summary>
             ///   System.Void OnInitialize()
             /// </summary>
             /// <returns>struct System.Void</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("OnInitialize", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial void ON_INITIALIZE(); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("OnInitialize", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           public partial void ON_INITIALIZE(); 
 */
             /// <summary>
             ///   System.Void ReplaceSpace(Game.Script.UI.Extern.LanguageData data)
             /// </summary>
             /// <param name = "data">class Game.Script.UI.Extern.LanguageData</param>
             /// <returns>struct System.Void</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("ReplaceSpace", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("Game.Script.UI.Extern.LanguageData", 0)]
-            public partial void REPLACE_SPACE(nint data); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("ReplaceSpace", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("Game.Script.UI.Extern.LanguageData", 0)]
+           public partial void REPLACE_SPACE(nint data); 
 */
             /// <summary>
             ///   System.Void SetLanguage(UnityEngine.SystemLanguage language)
             /// </summary>
             /// <param name = "language">enum UnityEngine.SystemLanguage</param>
             /// <returns>struct System.Void</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("SetLanguage", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("UnityEngine.SystemLanguage", 0)]
-            public partial void SET_LANGUAGE(UnityEngine.SystemLanguage language); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("SetLanguage", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("UnityEngine.SystemLanguage", 0)]
+           public partial void SET_LANGUAGE(UnityEngine.SystemLanguage language); 
 */
         }
 

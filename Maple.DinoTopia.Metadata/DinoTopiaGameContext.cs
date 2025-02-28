@@ -5,10 +5,16 @@ namespace Maple.DinoTopia.Metadata
 {
     [ContextParentMetadata<ContextMetadataCollector>(true)]
 
-    [ContextMemberMetadata<Game>]
+
+    [ContextMemberMetadata<ActorConfig>]
+    [ContextMemberMetadata<BuffConfig>]
+
     [ContextMemberMetadata<ItemConfig>]
+
+    [ContextMemberMetadata<Game>]
     [ContextMemberMetadata<UserDataSubsystem>]
 
+    [ContextMemberMetadata<LocalizationSubsystem>]
     public partial class DinoTopiaGameContext
     {
     }
