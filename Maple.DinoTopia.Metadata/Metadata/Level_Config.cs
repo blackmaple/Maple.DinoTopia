@@ -52,10 +52,10 @@ namespace Maple.DinoTopia.Metadata
             /// class ["mscorlib.dll"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-            /*
+        
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("ConfigId", "System.String")]
-           public partial nint CONFIG_ID { get; set; } 
-*/
+           public partial PMonoString CONFIG_ID { get; set; } 
+ 
 
             /// <summary>
             /// 0x20 System.Int32 Round

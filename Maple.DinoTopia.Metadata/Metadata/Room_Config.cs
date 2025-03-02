@@ -1,3 +1,5 @@
+using Maple.MonoGameAssistant.Core;
+
 namespace Maple.DinoTopia.Metadata
 {
     /// <summary>
@@ -30,20 +32,20 @@ namespace Maple.DinoTopia.Metadata
             /// class ["mscorlib.dll"."System.Collections.Generic"."Dictionary`2"]
             /// </summary>
             /// <returns>class System.Collections.Generic.Dictionary<System.String , Room_Config></returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("mDic", "System.Collections.Generic.Dictionary<System.String,Room_Config>")]
-            public static partial nint M_DIC { get; set; } 
-*/
+            public static partial PMonoDictionary_OptimizationDefault<PMonoString, Room_Config.Ptr_Room_Config> M_DIC { get; set; } 
+ 
 
             /// <summary>
             /// 0x10 System.String Id
             /// class ["mscorlib.dll"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
+       
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("Id", "System.String")]
-            public partial nint ID { get; set; } 
-*/
+            public partial PMonoString ID { get; set; } 
+ 
 
             /// <summary>
             /// 0x18 System.String DescInside
@@ -145,10 +147,10 @@ namespace Maple.DinoTopia.Metadata
             /// static  System.Collections.Generic.Dictionary<System.String , Room_Config> get_dic()
             /// </summary>
             /// <returns>class System.Collections.Generic.Dictionary<System.String , Room_Config></returns>
-             /*
+           
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_dic", "System.Collections.Generic.Dictionary<System.String,Room_Config>", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public static partial nint GET_DIC(); 
-*/
+            public static partial PMonoDictionary_OptimizationDefault<PMonoString, Room_Config.Ptr_Room_Config> GET_DIC(); 
+ 
             /// <summary>
             /// static  System.Void OnLoad(System.Collections.Generic.List<CSVHelper.CsvRow> rows)
             /// </summary>

@@ -1,3 +1,5 @@
+using Maple.MonoGameAssistant.Core;
+
 namespace Maple.DinoTopia.Metadata
 {
     /// <summary>
@@ -30,20 +32,20 @@ namespace Maple.DinoTopia.Metadata
             /// class ["mscorlib.dll"."System.Collections.Generic"."Dictionary`2"]
             /// </summary>
             /// <returns>class System.Collections.Generic.Dictionary<System.String , RoomShopItemConfig></returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("mDic", "System.Collections.Generic.Dictionary<System.String,RoomShopItemConfig>")]
-            public static partial nint M_DIC { get; set; } 
-*/
+            public static partial PMonoDictionary_OptimizationDefault<PMonoString, RoomShopItemConfig.Ptr_RoomShopItemConfig> M_DIC { get; set; } 
+ 
 
             /// <summary>
             /// 0x10 System.String Id
             /// class ["mscorlib.dll"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
+           
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("Id", "System.String")]
             public partial nint ID { get; set; } 
-*/
+ 
 
             /// <summary>
             /// 0x18 System.Int32 Type
@@ -225,10 +227,10 @@ namespace Maple.DinoTopia.Metadata
             /// static  System.Collections.Generic.Dictionary<System.String , RoomShopItemConfig> get_dic()
             /// </summary>
             /// <returns>class System.Collections.Generic.Dictionary<System.String , RoomShopItemConfig></returns>
-             /*
+            
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_dic", "System.Collections.Generic.Dictionary<System.String,RoomShopItemConfig>", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public static partial nint GET_DIC(); 
-*/
+            public static partial PMonoDictionary_OptimizationDefault<PMonoString, RoomShopItemConfig.Ptr_RoomShopItemConfig> GET_DIC(); 
+ 
             /// <summary>
             /// static  System.Void OnLoad(System.Collections.Generic.List<CSVHelper.CsvRow> rows)
             /// </summary>

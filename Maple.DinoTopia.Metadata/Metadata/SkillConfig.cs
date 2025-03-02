@@ -1,3 +1,5 @@
+using Maple.MonoGameAssistant.Core;
+
 namespace Maple.DinoTopia.Metadata
 {
     /// <summary>
@@ -30,20 +32,20 @@ namespace Maple.DinoTopia.Metadata
             /// class ["mscorlib.dll"."System.Collections.Generic"."Dictionary`2"]
             /// </summary>
             /// <returns>class System.Collections.Generic.Dictionary<System.String , SkillConfig></returns>
-             /*
+          
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("mDic", "System.Collections.Generic.Dictionary<System.String,SkillConfig>")]
-            public static partial nint M_DIC { get; set; } 
-*/
+            public static partial PMonoDictionary_OptimizationDefault<PMonoString, SkillConfig.Ptr_SkillConfig> M_DIC { get; set; } 
+ 
 
             /// <summary>
             /// 0x10 System.String id
             /// class ["mscorlib.dll"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
+           
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("id", "System.String")]
-            public partial nint ID { get; set; } 
-*/
+            public partial PMonoString ID { get; set; } 
+ 
 
             /// <summary>
             /// 0x18 System.String NameInside
@@ -70,10 +72,10 @@ namespace Maple.DinoTopia.Metadata
             /// class ["mscorlib.dll"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
+          
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("name", "System.String")]
-            public partial nint NAME { get; set; } 
-*/
+            public partial PMonoString NAME { get; set; } 
+ 
 
             /// <summary>
             /// 0x30 System.String Simpledescription
@@ -90,10 +92,10 @@ namespace Maple.DinoTopia.Metadata
             /// class ["mscorlib.dll"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
+         
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("description", "System.String")]
-            public partial nint DESCRIPTION { get; set; } 
-*/
+            public partial PMonoString DESCRIPTION { get; set; } 
+ 
 
             /// <summary>
             /// 0x40 System.String[] Parameter
@@ -505,10 +507,10 @@ namespace Maple.DinoTopia.Metadata
             /// static  System.Collections.Generic.Dictionary<System.String , SkillConfig> get_dic()
             /// </summary>
             /// <returns>class System.Collections.Generic.Dictionary<System.String , SkillConfig></returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_dic", "System.Collections.Generic.Dictionary<System.String,SkillConfig>", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public static partial nint GET_DIC(); 
-*/
+            public static partial PMonoDictionary_OptimizationDefault<PMonoString, SkillConfig.Ptr_SkillConfig> GET_DIC(); 
+ 
             /// <summary>
             /// static  System.Void OnLoad(System.Collections.Generic.List<CSVHelper.CsvRow> rows)
             /// </summary>
