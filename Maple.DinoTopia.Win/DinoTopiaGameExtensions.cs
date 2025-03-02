@@ -18,6 +18,7 @@ namespace Maple.DinoTopia.Win
                 p.QQ = "0";
                 p.Http = true;
                 p.NamedPipe = true;
+                p.AutoOpenUrl = true;
 
             }, services =>
             {

@@ -20,6 +20,7 @@ namespace Maple.DinoTopia.Metadata
             this.Context = gameContext;
             this.Ptr_Game = Game.Ptr_Game._INSTANCE;
             InitSubSystem();
+            InitWorldSystem();
         }
 
         public void InitSubSystem()
@@ -50,16 +51,41 @@ namespace Maple.DinoTopia.Metadata
 
         }
 
+
+        public void InitWorldSystem()
+        {
+            foreach (var world_dic in Ptr_Game._WORLDS.AsRefArray())
+            {
+
+                foreach (var dic in world_dic.Value._SUBSYSTEMS.AsRefArray())
+                {
+                    var pObject = dic.Value;
+                    var monoclass = this.Context.RuntimeContext.RuntiemProvider.GetMonoClass(pObject);
+
+                
+
+                    var classtype = this.Context.RuntimeContext.RuntiemProvider.GetMonoClassType(monoclass);
+                    var classfullname = this.Context.RuntimeContext.RuntiemProvider.GetMonoTypeName(classtype);
+                    this.Logger.LogInformation("world:{world}={classfullname}:{pObject}",world_dic.Value.NAME.ToString(), classfullname, pObject.ToString());
+
+                }
+
+            }
+        }
+
         #region LoadConfig
         public void LoadConfig()
         {
             InventoryDisplayDTOs.AddRange(
                 [
-
-                ..LoadBuffConfig(),
-                ..LoadItemConfig(),
-                ..LoadPet_Config(),
+                    ..LoadBuffConfig(),
+                    ..LoadItemConfig(),
+                    ..LoadPet_Config(),
+                    ..LoadTalentConfig(),
+                    ..LoadTotemConfig(),
                 ]);
+
+            CurrencyDisplayDTOs.AddRange([.. LoadCharacterStrengthenConfig()]);
         }
 
         public void LoadActorConfig()
@@ -138,16 +164,22 @@ namespace Maple.DinoTopia.Metadata
 
             }
         }
-        public void LoadCharacterStrengthenConfig()
+        public IEnumerable<GameCurrencyDisplayDTO> LoadCharacterStrengthenConfig()
         {
-            using var _ = this.Logger.Running();
-            foreach (var dic in CharacterStrengthenConfig.Ptr_CharacterStrengthenConfig.GET_DIC().AsRefArray())
+            var cfg_dic = CharacterStrengthenConfig.Ptr_CharacterStrengthenConfig.M_DIC;
+            if (cfg_dic == nint.Zero)
             {
-                var name = dic.Value.NAME;
-                var localName = this.Ptr_LocalizationSubsystem.GET(name);
-                this.Logger.LogInformation(" id:{id},{name}:{localName}", dic.Value.ID.ToString(), name, localName.ToString());
+                yield break;
 
 
+            }
+            foreach (var dic in cfg_dic.AsRefArray())
+            {
+                var config = dic.Value;
+                var objId = config.ID.ToString()!;
+                var displayName = this.Ptr_LocalizationSubsystem.GET(config.NAME).ToString();
+                var displayDesc = this.Ptr_LocalizationSubsystem.GET(config.DES).ToString();
+                yield return new GameCurrencyDisplayDTO() { ObjectId = objId, DisplayName = displayName, DisplayDesc = displayDesc, DisplayCategory = nameof(CharacterStrengthenConfig) };
             }
         }
         public void LoadDropConfig()
@@ -483,16 +515,20 @@ namespace Maple.DinoTopia.Metadata
 
             }
         }
-        public void LoadTalentConfig()
+        public IEnumerable<GameInventoryDisplayDTO> LoadTalentConfig()
         {
-            using var _ = this.Logger.Running();
-            foreach (var dic in TalentConfig.Ptr_TalentConfig.GET_DIC().AsRefArray())
+            var cfg_dic = TalentConfig.Ptr_TalentConfig.M_DIC;
+            if (cfg_dic == nint.Zero)
             {
-                var name = dic.Value.NAME;
-                var localName = this.Ptr_LocalizationSubsystem.GET(name);
-                this.Logger.LogInformation(" id:{id},{name}:{localName}", dic.Value.ID.ToString(), name, localName.ToString());
-
-
+                yield break;
+            }
+            foreach (var dic in cfg_dic.AsRefArray())
+            {
+                var config = dic.Value;
+                var objId = config.ID.ToString()!;
+                var displayName = this.Ptr_LocalizationSubsystem.GET(config.NAME).ToString();
+                var displayDesc = this.Ptr_LocalizationSubsystem.GET(config.DESC).ToString();
+                yield return new GameInventoryDisplayDTO() { ObjectId = objId, DisplayName = displayName, DisplayDesc = displayDesc, DisplayCategory = nameof(TalentConfig) };
             }
         }
         public void LoadTaskConfig()
@@ -555,16 +591,20 @@ namespace Maple.DinoTopia.Metadata
 
             }
         }
-        public void LoadTotemConfig()
+        public IEnumerable<GameInventoryDisplayDTO> LoadTotemConfig()
         {
-            using var _ = this.Logger.Running();
-            foreach (var dic in TotemConfig.Ptr_TotemConfig.GET_DIC().AsRefArray())
+            var cfg_dic = TotemConfig.Ptr_TotemConfig.M_DIC;
+            if (cfg_dic == nint.Zero)
             {
-                var name = dic.Value.NAME;
-                var localName = this.Ptr_LocalizationSubsystem.GET(name);
-                this.Logger.LogInformation(" id:{id},{name}:{localName}", dic.Value.ID.ToString(), name, localName.ToString());
-
-
+                yield break;
+            }
+            foreach (var dic in cfg_dic.AsRefArray())
+            {
+                var config = dic.Value;
+                var objId = config.ID.ToString()!;
+                var displayName = this.Ptr_LocalizationSubsystem.GET(config.NAME).ToString();
+                var displayDesc = this.Ptr_LocalizationSubsystem.GET(config.DESC).ToString();
+                yield return new GameInventoryDisplayDTO() { ObjectId = objId, DisplayName = displayName, DisplayDesc = displayDesc, DisplayCategory = nameof(TotemConfig) };
             }
         }
         #endregion
@@ -578,6 +618,7 @@ namespace Maple.DinoTopia.Metadata
             InitPet_Config();
             InitTalentConfig();
             InitTotemConfig();
+            InitCharacterStrengthenConfig();
         }
 
 

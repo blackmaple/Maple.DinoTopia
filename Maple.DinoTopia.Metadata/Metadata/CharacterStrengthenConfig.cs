@@ -92,20 +92,20 @@ namespace Maple.DinoTopia.Metadata
             /// struct ["mscorlib.dll"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-            /*
-           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("Level", "System.Int32")]
-           public partial System.Int32 LEVEL { get; set; } 
-*/
+
+            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("Level", "System.Int32")]
+            public partial System.Int32 LEVEL { get; }
+
 
             /// <summary>
             /// 0x3C System.Int32 MaxLevel
             /// struct ["mscorlib.dll"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-            /*
-           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("MaxLevel", "System.Int32")]
-           public partial System.Int32 MAX_LEVEL { get; set; } 
-*/
+
+            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("MaxLevel", "System.Int32")]
+            public partial System.Int32 MAX_LEVEL { get; }
+
 
             /// <summary>
             /// 0x40 System.String Strengthen

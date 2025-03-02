@@ -50,8 +50,9 @@ namespace Maple.DinoTopia.Metadata
 
 
     [ContextMemberMetadata<Game>]
-    [ContextMemberMetadata<UserDataSubsystem>]
+    [ContextMemberMetadata<World>]
 
+    [ContextMemberMetadata<UserDataSubsystem>]
     [ContextMemberMetadata<LocalizationSubsystem>]
     public partial class DinoTopiaGameContext
     {

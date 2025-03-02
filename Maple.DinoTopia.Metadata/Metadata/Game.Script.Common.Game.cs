@@ -100,10 +100,10 @@ namespace Maple.DinoTopia.Metadata
             /// class ["mscorlib.dll"."System.Collections.Generic"."Dictionary`2"]
             /// </summary>
             /// <returns>class System.Collections.Generic.Dictionary<System.String , Game.Script.Common.World></returns>
-            /*
+          
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("_worlds", "System.Collections.Generic.Dictionary<System.String,Game.Script.Common.World>")]
-           public partial nint _WORLDS { get; set; } 
-*/
+           public partial PMonoDictionary_OptimizationDefault<PMonoString, World.Ptr_World> _WORLDS { get;  } 
+ 
 
             /// <summary>
             /// 0x30 System.String <LoadMapName>k__BackingField
@@ -130,10 +130,10 @@ namespace Maple.DinoTopia.Metadata
             /// class ["Assembly-CSharp.dll"."Game.Script.Character"."FightCharacter"]
             /// </summary>
             /// <returns>class Game.Script.Character.FightCharacter</returns>
-            /*
+           
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("_myController", "Game.Script.Character.FightCharacter")]
-           public partial nint _MY_CONTROLLER { get; set; } 
-*/
+           public partial nint _MY_CONTROLLER { get; } 
+ 
 
             /// <summary>
             /// 0x48 Game.Script.Map.MapBk _mapBk
