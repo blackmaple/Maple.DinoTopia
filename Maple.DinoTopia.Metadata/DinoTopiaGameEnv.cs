@@ -1,7 +1,9 @@
 ﻿using Maple.MonoGameAssistant.Common;
+using Maple.MonoGameAssistant.Core;
 using Maple.MonoGameAssistant.GameDTO;
 using Maple.MonoGameAssistant.MetadataExtensions.MetadataCollector;
 using Microsoft.Extensions.Logging;
+using System.Runtime.CompilerServices;
 
 namespace Maple.DinoTopia.Metadata
 {
@@ -25,6 +27,9 @@ namespace Maple.DinoTopia.Metadata
             //this.Logger.LogInformation("userdataSubSystem:{s}", this.Context.UserDataSubsystem.ClassMetadata.ClassInfo.Pointer.ToString("X8"));
             foreach (var dic in Ptr_Game._SUBSYSTEMS.AsRefArray())
             {
+
+
+
                 var pObject = dic.Value;
                 var monoclass = this.Context.RuntimeContext.RuntiemProvider.GetMonoClass(pObject);
 
@@ -36,21 +41,26 @@ namespace Maple.DinoTopia.Metadata
                 {
                     this.Ptr_LocalizationSubsystem = pObject.To<LocalizationSubsystem.Ptr_LocalizationSubsystem>();
                 }
-                ////    var monoclass = dic.Value.MonoClass;
-                //;
 
-                //var classtype = this.Context.RuntimeContext.RuntiemProvider.GetMonoClassType(monoclass);
-
-                //var classfullname = this.Context.RuntimeContext.RuntiemProvider.GetMonoTypeName(classtype).ToString();
-
-                //this.Logger.LogInformation("Key:{Key},Value:{Value},monoclass:{monoclass} classtype:{classtype},classfullname:{classfullname}",
-                //    dic.Key.ToString(), dic.Value.ToString(),
-                //      monoclass, classtype, classfullname);
+                var classtype = this.Context.RuntimeContext.RuntiemProvider.GetMonoClassType(monoclass);
+                var classfullname = this.Context.RuntimeContext.RuntiemProvider.GetMonoTypeName(classtype);
+                this.Logger.LogInformation("{classfullname}:{pObject}", classfullname, pObject.ToString());
 
             }
 
         }
 
+        #region LoadConfig
+        public void LoadConfig()
+        {
+            InventoryDisplayDTOs.AddRange(
+                [
+
+                ..LoadBuffConfig(),
+                ..LoadItemConfig(),
+                ..LoadPet_Config(),
+                ]);
+        }
 
         public void LoadActorConfig()
         {
@@ -64,16 +74,20 @@ namespace Maple.DinoTopia.Metadata
 
             }
         }
-        public void LoadBuffConfig()
+        public IEnumerable<GameInventoryDisplayDTO> LoadBuffConfig()
         {
-            using var _ = this.Logger.Running();
-            foreach (var dic in BuffConfig.Ptr_BuffConfig.GET_DIC().AsRefArray())
+            var cfg_dic = BuffConfig.Ptr_BuffConfig.M_DIC;
+            if (cfg_dic == nint.Zero)
             {
-                var name = dic.Value.NAME;
-                var localName = this.Ptr_LocalizationSubsystem.GET(name);
-                this.Logger.LogInformation(" id:{id},{name}:{localName}", dic.Value.ID.ToString(), name, localName.ToString());
-
-
+                yield break;
+            }
+            foreach (var dic in cfg_dic.AsRefArray())
+            {
+                var config = dic.Value;
+                var objId = config.ID.ToString()!;
+                var displayName = this.Ptr_LocalizationSubsystem.GET(config.NAME).ToString();
+                var displayDesc = this.Ptr_LocalizationSubsystem.GET(config.DESCRIPTION).ToString();
+                yield return new GameInventoryDisplayDTO() { ObjectId = objId, DisplayName = displayName, DisplayDesc = displayDesc, DisplayCategory = nameof(BuffConfig) };
             }
         }
         public void LoadBuffEffectConfig()
@@ -221,16 +235,20 @@ namespace Maple.DinoTopia.Metadata
 
             }
         }
-        public void LoadItemConfig()
+        public IEnumerable<GameInventoryDisplayDTO> LoadItemConfig()
         {
-            using var _ = this.Logger.Running();
-            foreach (var dic in ItemConfig.Ptr_ItemConfig.GET_DIC().AsRefArray())
+            var cfg_dic = ItemConfig.Ptr_ItemConfig.M_DIC;
+            if (cfg_dic == nint.Zero)
             {
-                var name = dic.Value.NAME;
-                var localName = this.Ptr_LocalizationSubsystem.GET(name);
-                this.Logger.LogInformation(" id:{id},{name}:{localName}", dic.Value.ID.ToString(), name, localName.ToString());
-
-
+                yield break;
+            }
+            foreach (var dic in cfg_dic.AsRefArray())
+            {
+                var config = dic.Value;
+                var objId = config.ID.ToString()!;
+                var displayName = this.Ptr_LocalizationSubsystem.GET(config.NAME).ToString();
+                var displayDesc = this.Ptr_LocalizationSubsystem.GET(config.DESC).ToString();
+                yield return new GameInventoryDisplayDTO() { ObjectId = objId, DisplayName = displayName, DisplayDesc = displayDesc, DisplayCategory = nameof(ItemConfig) };
             }
         }
         public void LoadLevel_Config()
@@ -305,16 +323,20 @@ namespace Maple.DinoTopia.Metadata
 
             }
         }
-        public void LoadPet_Config()
+        public IEnumerable<GameInventoryDisplayDTO> LoadPet_Config()
         {
-            using var _ = this.Logger.Running();
-            foreach (var dic in Pet_Config.Ptr_Pet_Config.GET_DIC().AsRefArray())
+            var cfg_dic = Pet_Config.Ptr_Pet_Config.M_DIC;
+            if (cfg_dic == nint.Zero)
             {
-                var name = dic.Value.NAME;
-                var localName = this.Ptr_LocalizationSubsystem.GET(name);
-
-                this.Logger.LogInformation(" id:{id},{name}:{localName}", dic.Value.ID.ToString(), name, localName.ToString());
-
+                yield break;
+            }
+            foreach (var dic in cfg_dic.AsRefArray())
+            {
+                var config = dic.Value;
+                var objId = config.ID.ToString()!;
+                var displayName = this.Ptr_LocalizationSubsystem.GET(config.NAME).ToString();
+                var displayDesc = this.Ptr_LocalizationSubsystem.GET(config.NAME_INSIDE).ToString();
+                yield return new GameInventoryDisplayDTO() { ObjectId = objId, DisplayName = displayName, DisplayDesc = displayDesc, DisplayCategory = nameof(ItemConfig) };
             }
         }
         public void LoadRandomSpawnMonsterConfig()
@@ -545,173 +567,186 @@ namespace Maple.DinoTopia.Metadata
 
             }
         }
+        #endregion
 
         //
-        public static void ReadActorConfig()
+        #region InitConfig
+        public static void InitConfig()
+        {
+            InitBuffConfig();
+            InitItemConfig();
+            InitPet_Config();
+            InitTalentConfig();
+            InitTotemConfig();
+        }
+
+
+        public static void InitActorConfig()
         {
             _ = ActorConfig.Ptr_ActorConfig.GET_DIC();
         }
-        public static void ReadBuffConfig()
+        public static void InitBuffConfig()
         {
             _ = BuffConfig.Ptr_BuffConfig.GET_DIC();
         }
-        public static void ReadBuffEffectConfig()
+        public static void InitBuffEffectConfig()
         {
             _ = BuffEffectConfig.Ptr_BuffEffectConfig.GET_DIC();
         }
-        public static void ReadBuildConfig()
+        public static void InitBuildConfig()
         {
             _ = BuildConfig.Ptr_BuildConfig.GET_DIC();
         }
-        public static void ReadChapter_Config()
+        public static void InitChapter_Config()
         {
             _ = Chapter_Config.Ptr_Chapter_Config.GET_DIC();
         }
-        public static void ReadCharacterDIYConfig()
+        public static void InitCharacterDIYConfig()
         {
             _ = CharacterDIYConfig.Ptr_CharacterDIYConfig.GET_DIC();
         }
-        public static void ReadCharacterStrengthenConfig()
+        public static void InitCharacterStrengthenConfig()
         {
             _ = CharacterStrengthenConfig.Ptr_CharacterStrengthenConfig.GET_DIC();
         }
-        public static void ReadDropConfig()
+        public static void InitDropConfig()
         {
             _ = DropConfig.Ptr_DropConfig.GET_DIC();
         }
-        public static void ReadGatherRes_Config()
+        public static void InitGatherRes_Config()
         {
             _ = GatherRes_Config.Ptr_GatherRes_Config.GET_DIC();
         }
-        public static void ReadGlobalEffectConfig()
+        public static void InitGlobalEffectConfig()
         {
             _ = GlobalEffectConfig.Ptr_GlobalEffectConfig.GET_DIC();
         }
-        public static void ReadGuideConfig()
+        public static void InitGuideConfig()
         {
             _ = GuideConfig.Ptr_GuideConfig.GET_DIC();
         }
-        public static void ReadHomeUpdateConfig()
+        public static void InitHomeUpdateConfig()
         {
             _ = HomeUpdateConfig.Ptr_HomeUpdateConfig.GET_DIC();
         }
-        public static void ReadHuntingTaskConfig()
+        public static void InitHuntingTaskConfig()
         {
             _ = HuntingTaskConfig.Ptr_HuntingTaskConfig.GET_DIC();
         }
-        public static void ReadInputManagerConfig()
+        public static void InitInputManagerConfig()
         {
             _ = InputManagerConfig.Ptr_InputManagerConfig.GET_DIC();
         }
-        public static void ReadItemConfig()
+        public static void InitItemConfig()
         {
             _ = ItemConfig.Ptr_ItemConfig.GET_DIC();
         }
-        public static void ReadLevel_Config()
+        public static void InitLevel_Config()
         {
             _ = Level_Config.Ptr_Level_Config.GET_DIC();
         }
-        public static void ReadMapBKConfig()
+        public static void InitMapBKConfig()
         {
             _ = MapBKConfig.Ptr_MapBKConfig.GET_DIC();
         }
-        public static void ReadMap_Group_Config()
+        public static void InitMap_Group_Config()
         {
             _ = Map_Group_Config.Ptr_Map_Group_Config.GET_DIC();
         }
-        public static void ReadMap_Type_Config()
+        public static void InitMap_Type_Config()
         {
             _ = Map_Type_Config.Ptr_Map_Type_Config.GET_DIC();
         }
-        public static void ReadMonsterConfig()
+        public static void InitMonsterConfig()
         {
             _ = MonsterConfig.Ptr_MonsterConfig.GET_DIC();
         }
-        public static void ReadMonsterRandomConfig()
+        public static void InitMonsterRandomConfig()
         {
             _ = MonsterRandomConfig.Ptr_MonsterRandomConfig.GET_DIC();
         }
-        public static void ReadPet_Config()
+        public static void InitPet_Config()
         {
             _ = Pet_Config.Ptr_Pet_Config.GET_DIC();
         }
-        public static void ReadRandomSpawnMonsterConfig()
+        public static void InitRandomSpawnMonsterConfig()
         {
             _ = RandomSpawnMonsterConfig.Ptr_RandomSpawnMonsterConfig.GET_DIC();
         }
-        public static void ReadRelicConfig()
+        public static void InitRelicConfig()
         {
             _ = RelicConfig.Ptr_RelicConfig.GET_DIC();
         }
-        public static void ReadRoomShopConfig()
+        public static void InitRoomShopConfig()
         {
             _ = RoomShopConfig.Ptr_RoomShopConfig.GET_DIC();
         }
-        public static void ReadRoomShopItemConfig()
+        public static void InitRoomShopItemConfig()
         {
             _ = RoomShopItemConfig.Ptr_RoomShopItemConfig.GET_DIC();
         }
-        public static void ReadRoom_Config()
+        public static void InitRoom_Config()
         {
             _ = Room_Config.Ptr_Room_Config.GET_DIC();
         }
-        public static void ReadSeedConfig()
+        public static void InitSeedConfig()
         {
             _ = SeedConfig.Ptr_SeedConfig.GET_DIC();
         }
-        public static void ReadShopItemConfig()
+        public static void InitShopItemConfig()
         {
             _ = ShopItemConfig.Ptr_ShopItemConfig.GET_DIC();
         }
-        public static void ReadSkillConfig()
+        public static void InitSkillConfig()
         {
             _ = SkillConfig.Ptr_SkillConfig.GET_DIC();
         }
-        public static void ReadSkinColorConfig()
+        public static void InitSkinColorConfig()
         {
             _ = SkinColorConfig.Ptr_SkinColorConfig.GET_DIC();
         }
-        public static void ReadSkinPresetConfig()
+        public static void InitSkinPresetConfig()
         {
             _ = SkinPresetConfig.Ptr_SkinPresetConfig.GET_DIC();
         }
-        public static void ReadStage_Config()
+        public static void InitStage_Config()
         {
             _ = Stage_Config.Ptr_Stage_Config.GET_DIC();
         }
-        public static void ReadStatusConfig()
+        public static void InitStatusConfig()
         {
             _ = StatusConfig.Ptr_StatusConfig.GET_DIC();
         }
-        public static void ReadTalentConfig()
+        public static void InitTalentConfig()
         {
             _ = TalentConfig.Ptr_TalentConfig.GET_DIC();
         }
-        public static void ReadTaskConfig()
+        public static void InitTaskConfig()
         {
             _ = TaskConfig.Ptr_TaskConfig.GET_DIC();
         }
-        public static void ReadTecBuildConfig()
+        public static void InitTecBuildConfig()
         {
             _ = TecBuildConfig.Ptr_TecBuildConfig.GET_DIC();
         }
-        public static void ReadTecRuleConfig()
+        public static void InitTecRuleConfig()
         {
             _ = TecRuleConfig.Ptr_TecRuleConfig.GET_DIC();
         }
-        public static void ReadTecTotemConfig()
+        public static void InitTecTotemConfig()
         {
             _ = TecTotemConfig.Ptr_TecTotemConfig.GET_DIC();
         }
-        public static void ReadToolConfig()
+        public static void InitToolConfig()
         {
             _ = ToolConfig.Ptr_ToolConfig.GET_DIC();
         }
-        public static void ReadTotemConfig()
+        public static void InitTotemConfig()
         {
             _ = TotemConfig.Ptr_TotemConfig.GET_DIC();
         }
 
+        #endregion
 
 
         public static List<GameCurrencyDisplayDTO> CurrencyDisplayDTOs { get; } = [];

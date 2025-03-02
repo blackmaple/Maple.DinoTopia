@@ -44,7 +44,7 @@ namespace Maple.DinoTopia.Metadata
             /// <returns>class System.String</returns>
 
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("id", "System.String")]
-            public partial PMonoString ID { get; set; }
+            public partial PMonoString ID { get; }
 
 
             /// <summary>
@@ -54,7 +54,7 @@ namespace Maple.DinoTopia.Metadata
             /// <returns>class System.String</returns>
 
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("name", "System.String")]
-            public partial PMonoString NAME { get; set; }
+            public partial PMonoString NAME { get; }
 
 
             /// <summary>
@@ -62,10 +62,10 @@ namespace Maple.DinoTopia.Metadata
             /// class ["mscorlib.dll"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-            /*
-           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("Desc", "System.String")]
-           public partial nint DESC { get; set; } 
-*/
+
+            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("Desc", "System.String")]
+            public partial PMonoString DESC { get; }
+
 
             /// <summary>
             /// 0x28 System.String NameInside

@@ -33,7 +33,7 @@ namespace Maple.DinoTopia.Win
         {
             //await this.UITaskAsync(p => DinoTopiaGameEnv.ReadActorConfig()).ConfigureAwait(false);
 
-           await this.UITaskAsync(p => new DinoTopiaGameEnv(p).LoadBuffConfig()).ConfigureAwait(false);
+            await this.UITaskAsync(p => new DinoTopiaGameEnv(p).LoadBuffConfig()).ConfigureAwait(false);
 
             //await this.UITaskAsync(p => DinoTopiaGameEnv.ReadBuffEffectConfig()).ConfigureAwait(false);
 
@@ -43,7 +43,7 @@ namespace Maple.DinoTopia.Win
 
             //await this.UITaskAsync(p => DinoTopiaGameEnv.ReadCharacterDIYConfig()).ConfigureAwait(false);
 
-            await this.UITaskAsync(p => new DinoTopiaGameEnv(p).LoadCharacterStrengthenConfig()).ConfigureAwait(false);
+            //      await this.UITaskAsync(p => new DinoTopiaGameEnv(p).LoadCharacterStrengthenConfig()).ConfigureAwait(false);
 
             //await this.UITaskAsync(p => DinoTopiaGameEnv.ReadDropConfig()).ConfigureAwait(false);
 
@@ -59,7 +59,7 @@ namespace Maple.DinoTopia.Win
 
             //await this.UITaskAsync(p => DinoTopiaGameEnv.ReadInputManagerConfig()).ConfigureAwait(false);
 
-          await this.UITaskAsync(p => new DinoTopiaGameEnv(p).LoadItemConfig()).ConfigureAwait(false);
+            await this.UITaskAsync(p => new DinoTopiaGameEnv(p).LoadItemConfig()).ConfigureAwait(false);
 
             //await this.UITaskAsync(p => DinoTopiaGameEnv.ReadLevel_Config()).ConfigureAwait(false);
 
@@ -73,11 +73,11 @@ namespace Maple.DinoTopia.Win
 
             //await this.UITaskAsync(p => DinoTopiaGameEnv.ReadMonsterRandomConfig()).ConfigureAwait(false);
 
-             await this.UITaskAsync(p => new DinoTopiaGameEnv(p).LoadPet_Config()).ConfigureAwait(false);
+            await this.UITaskAsync(p => new DinoTopiaGameEnv(p).LoadPet_Config()).ConfigureAwait(false);
 
             //await this.UITaskAsync(p => DinoTopiaGameEnv.ReadRandomSpawnMonsterConfig()).ConfigureAwait(false);
 
-    //         await this.UITaskAsync(p => new DinoTopiaGameEnv(p).LoadRelicConfig()).ConfigureAwait(false);
+            //         await this.UITaskAsync(p => new DinoTopiaGameEnv(p).LoadRelicConfig()).ConfigureAwait(false);
 
             //await this.UITaskAsync(p => DinoTopiaGameEnv.ReadRoomShopConfig()).ConfigureAwait(false);
 
@@ -85,7 +85,7 @@ namespace Maple.DinoTopia.Win
 
             //await this.UITaskAsync(p => DinoTopiaGameEnv.ReadRoom_Config()).ConfigureAwait(false);
 
-        //     await this.UITaskAsync(p => new DinoTopiaGameEnv(p).LoadSeedConfig()).ConfigureAwait(false);
+            //     await this.UITaskAsync(p => new DinoTopiaGameEnv(p).LoadSeedConfig()).ConfigureAwait(false);
 
             //await this.UITaskAsync(p => DinoTopiaGameEnv.ReadShopItemConfig()).ConfigureAwait(false);
 
@@ -100,19 +100,19 @@ namespace Maple.DinoTopia.Win
             //await this.UITaskAsync(p => DinoTopiaGameEnv.ReadStatusConfig()).ConfigureAwait(false);
 
             await this.UITaskAsync(p => new DinoTopiaGameEnv(p).LoadTalentConfig()).ConfigureAwait(false);
- 
+
             //await this.UITaskAsync(p => DinoTopiaGameEnv.ReadTaskConfig()).ConfigureAwait(false);
- 
-            await this.UITaskAsync(p => DinoTopiaGameEnv.ReadTecBuildConfig()).ConfigureAwait(false);
- 
-           await this.UITaskAsync(p => DinoTopiaGameEnv.ReadTecRuleConfig()).ConfigureAwait(false);
- 
-             await this.UITaskAsync(p => new DinoTopiaGameEnv(p).LoadTecTotemConfig()).ConfigureAwait(false);
- 
-       //     await this.UITaskAsync(p => new DinoTopiaGameEnv(p).LoadToolConfig()).ConfigureAwait(false);
- 
-             await this.UITaskAsync(p => new DinoTopiaGameEnv(p).LoadTotemConfig()).ConfigureAwait(false);
- 
+
+            //await this.UITaskAsync(p => DinoTopiaGameEnv.ReadTecBuildConfig()).ConfigureAwait(false);
+
+            //await this.UITaskAsync(p => DinoTopiaGameEnv.ReadTecRuleConfig()).ConfigureAwait(false);
+
+            //await this.UITaskAsync(p => new DinoTopiaGameEnv(p).LoadTecTotemConfig()).ConfigureAwait(false);
+
+            //     await this.UITaskAsync(p => new DinoTopiaGameEnv(p).LoadToolConfig()).ConfigureAwait(false);
+
+            await this.UITaskAsync(p => new DinoTopiaGameEnv(p).LoadTotemConfig()).ConfigureAwait(false);
+
 
         }
     }
