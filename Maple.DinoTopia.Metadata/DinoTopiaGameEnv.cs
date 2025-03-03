@@ -15,6 +15,8 @@ namespace Maple.DinoTopia.Metadata
 
         public UserDataSubsystem.Ptr_UserDataSubsystem Ptr_UserDataSubsystem { get; private set; }
         public LocalizationSubsystem.Ptr_LocalizationSubsystem Ptr_LocalizationSubsystem { get; private set; }
+        public ActorStateSubsystem.Ptr_ActorStateSubsystem Ptr_ActorStateSubsystem { get; private set; }
+
         public DinoTopiaGameEnv(DinoTopiaGameContext gameContext)
         {
             this.Context = gameContext;
@@ -62,16 +64,47 @@ namespace Maple.DinoTopia.Metadata
                     var pObject = dic.Value;
                     var monoclass = this.Context.RuntimeContext.RuntiemProvider.GetMonoClass(pObject);
 
-                
+                    if (world_dic.Value.NAME.AsReadOnlySpan().Contains("home".AsSpan(), StringComparison.OrdinalIgnoreCase))
+                    {
+                        if (monoclass == this.Context.ActorStateSubsystem.ClassMetadata.ClassInfo.Pointer)
+                        {
+                            this.Ptr_ActorStateSubsystem = pObject.To<ActorStateSubsystem.Ptr_ActorStateSubsystem>();
+                        }
+                    }
 
                     var classtype = this.Context.RuntimeContext.RuntiemProvider.GetMonoClassType(monoclass);
                     var classfullname = this.Context.RuntimeContext.RuntiemProvider.GetMonoTypeName(classtype);
-                    this.Logger.LogInformation("world:{world}={classfullname}:{pObject}",world_dic.Value.NAME.ToString(), classfullname, pObject.ToString());
+                    this.Logger.LogInformation("world:{world}={classfullname}:{pObject}", world_dic.Value.NAME.ToString(), classfullname, pObject.ToString());
 
                 }
 
             }
         }
+
+        #region actor
+        public void LoadActor()
+        {
+            foreach (var actor in this.Ptr_ActorStateSubsystem.ACTORS)
+            {
+                var pObject = actor;
+                var monoclass = this.Context.RuntimeContext.RuntiemProvider.GetMonoClass(pObject);
+                if (monoclass == this.Context.ItemActor.ClassMetadata.ClassInfo.Pointer)
+                {
+                    var itemActor = pObject.To<ItemActor.Ptr_ItemActor>();
+                    if (itemActor.GET_CAN_PICK())
+                    {
+                        itemActor.DO_PICK_UP(this.Ptr_Game._MY_CONTROLLER);
+                    }
+                    itemActor.CLEAR();
+                }
+                var classtype = this.Context.RuntimeContext.RuntiemProvider.GetMonoClassType(monoclass);
+                var classfullname = this.Context.RuntimeContext.RuntiemProvider.GetMonoTypeName(classtype);
+                this.Logger.LogInformation("{classfullname}:{pObject}", classfullname, pObject.ToString());
+
+            }
+
+        }
+        #endregion
 
         #region LoadConfig
         public void LoadConfig()

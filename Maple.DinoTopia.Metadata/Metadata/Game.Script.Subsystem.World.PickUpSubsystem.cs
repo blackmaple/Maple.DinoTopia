@@ -1,3 +1,5 @@
+using Maple.MonoGameAssistant.Core;
+
 namespace Maple.DinoTopia.Metadata
 {
     /// <summary>
@@ -17,7 +19,7 @@ namespace Maple.DinoTopia.Metadata
 
             public static implicit operator Ptr_PickUpSubsystem(System.IntPtr ptr) => new Ptr_PickUpSubsystem(ptr);
             public static implicit operator System.IntPtr(Ptr_PickUpSubsystem ptr) => ptr.m_Pointer;
-            public static implicit operator bool (Ptr_PickUpSubsystem ptr) => ptr.m_Pointer != System.IntPtr.Zero;
+            public static implicit operator bool(Ptr_PickUpSubsystem ptr) => ptr.m_Pointer != System.IntPtr.Zero;
         }
 
         /// <summary>
@@ -30,9 +32,9 @@ namespace Maple.DinoTopia.Metadata
             /// class ["Assembly-CSharp.dll"."Game.Script.Common"."World"]
             /// </summary>
             /// <returns>class Game.Script.Common.World</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("<World>k__BackingField", "Game.Script.Common.World")]
-            public partial nint WORLD { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("<World>k__BackingField", "Game.Script.Common.World")]
+           public partial nint WORLD { get; set; } 
 */
 
             /// <summary>
@@ -40,20 +42,20 @@ namespace Maple.DinoTopia.Metadata
             /// class ["mscorlib.dll"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<Game.Script.Common.Actor></returns>
-             /*
+
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("findItems", "System.Collections.Generic.List<Game.Script.Common.Actor>")]
-            public partial nint FIND_ITEMS { get; set; } 
-*/
+            public partial PMonoList_S<PMonoObject> FIND_ITEMS { get; }
+
 
             /// <summary>
             /// 0x20 System.Collections.Generic.List<Game.Script.Common.Actor> weaponItems
             /// class ["mscorlib.dll"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<Game.Script.Common.Actor></returns>
-             /*
+
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("weaponItems", "System.Collections.Generic.List<Game.Script.Common.Actor>")]
-            public partial nint WEAPON_ITEMS { get; set; } 
-*/
+            public partial PMonoList_S<PMonoObject> WEAPON_ITEMS { get; }
+
         }
 
         /// <summary>

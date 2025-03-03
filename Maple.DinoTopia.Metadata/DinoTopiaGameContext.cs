@@ -51,6 +51,9 @@ namespace Maple.DinoTopia.Metadata
 
     [ContextMemberMetadata<Game>]
     [ContextMemberMetadata<World>]
+    [ContextMemberMetadata<ActorStateSubsystem>]
+    [ContextMemberMetadata<ItemActor>]
+
 
     [ContextMemberMetadata<UserDataSubsystem>]
     [ContextMemberMetadata<LocalizationSubsystem>]

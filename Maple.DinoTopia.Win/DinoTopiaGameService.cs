@@ -31,6 +31,11 @@ namespace Maple.DinoTopia.Win
             await this.MonoTaskAsync(p => new DinoTopiaGameEnv(p).LoadConfig()).ConfigureAwait(false);
         }
 
+        protected sealed override async ValueTask F9_KeyDown()
+        {
+            await this.UITaskAsync(p => new DinoTopiaGameEnv(p).LoadActor()).ConfigureAwait(false);
+        }
+
         public sealed override ValueTask<GameCurrencyDisplayDTO[]> GetListCurrencyDisplayAsync()
         {
             return new ValueTask<GameCurrencyDisplayDTO[]>([.. DinoTopiaGameEnv.CurrencyDisplayDTOs]);

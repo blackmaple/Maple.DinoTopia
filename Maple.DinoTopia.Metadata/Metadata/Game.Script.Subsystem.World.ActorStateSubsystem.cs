@@ -1,3 +1,5 @@
+using Maple.MonoGameAssistant.Core;
+
 namespace Maple.DinoTopia.Metadata
 {
     /// <summary>
@@ -17,7 +19,7 @@ namespace Maple.DinoTopia.Metadata
 
             public static implicit operator Ptr_ActorStateSubsystem(System.IntPtr ptr) => new Ptr_ActorStateSubsystem(ptr);
             public static implicit operator System.IntPtr(Ptr_ActorStateSubsystem ptr) => ptr.m_Pointer;
-            public static implicit operator bool (Ptr_ActorStateSubsystem ptr) => ptr.m_Pointer != System.IntPtr.Zero;
+            public static implicit operator bool(Ptr_ActorStateSubsystem ptr) => ptr.m_Pointer != System.IntPtr.Zero;
         }
 
         /// <summary>
@@ -30,9 +32,9 @@ namespace Maple.DinoTopia.Metadata
             /// class ["Assembly-CSharp.dll"."Game.Script.Common"."World"]
             /// </summary>
             /// <returns>class Game.Script.Common.World</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("<World>k__BackingField", "Game.Script.Common.World")]
-            public partial nint WORLD { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("<World>k__BackingField", "Game.Script.Common.World")]
+           public partial nint WORLD { get; set; } 
 */
 
             /// <summary>
@@ -40,19 +42,19 @@ namespace Maple.DinoTopia.Metadata
             /// class ["mscorlib.dll"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<Game.Script.Common.Actor></returns>
-             /*
+
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("Actors", "System.Collections.Generic.List<Game.Script.Common.Actor>")]
-            public partial nint ACTORS { get; set; } 
-*/
+            public partial PMonoList_S<PMonoObject> ACTORS { get; }
+
 
             /// <summary>
             /// 0x20 System.Collections.Generic.List<UnityEngine.Transform> _transforms
             /// class ["mscorlib.dll"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<UnityEngine.Transform></returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("_transforms", "System.Collections.Generic.List<UnityEngine.Transform>")]
-            public partial nint _TRANSFORMS { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("_transforms", "System.Collections.Generic.List<UnityEngine.Transform>")]
+           public partial nint _TRANSFORMS { get; set; } 
 */
 
             /// <summary>
@@ -60,9 +62,9 @@ namespace Maple.DinoTopia.Metadata
             /// struct ["Assembly-CSharp.dll".""."UpdateJob"]
             /// </summary>
             /// <returns>struct Game.Script.Subsystem.World.ActorStateSubsystem.UpdateJob</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("_updateJob", "Game.Script.Subsystem.World.ActorStateSubsystem.UpdateJob")]
-            public partial Game.Script.Subsystem.World.ActorStateSubsystem.UpdateJob _UPDATE_JOB { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("_updateJob", "Game.Script.Subsystem.World.ActorStateSubsystem.UpdateJob")]
+           public partial Game.Script.Subsystem.World.ActorStateSubsystem.UpdateJob _UPDATE_JOB { get; set; } 
 */
 
             /// <summary>
@@ -70,9 +72,9 @@ namespace Maple.DinoTopia.Metadata
             /// struct ["UnityEngine.CoreModule.dll"."UnityEngine.Jobs"."TransformAccessArray"]
             /// </summary>
             /// <returns>struct UnityEngine.Jobs.TransformAccessArray</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("_transformAccessArray", "UnityEngine.Jobs.TransformAccessArray")]
-            public partial UnityEngine.Jobs.TransformAccessArray _TRANSFORM_ACCESS_ARRAY { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("_transformAccessArray", "UnityEngine.Jobs.TransformAccessArray")]
+           public partial UnityEngine.Jobs.TransformAccessArray _TRANSFORM_ACCESS_ARRAY { get; set; } 
 */
 
             /// <summary>
@@ -80,9 +82,9 @@ namespace Maple.DinoTopia.Metadata
             /// struct ["UnityEngine.CoreModule.dll"."Unity.Jobs"."JobHandle"]
             /// </summary>
             /// <returns>struct Unity.Jobs.JobHandle</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("_updateJobHandle", "Unity.Jobs.JobHandle")]
-            public partial Unity.Jobs.JobHandle _UPDATE_JOB_HANDLE { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("_updateJobHandle", "Unity.Jobs.JobHandle")]
+           public partial Unity.Jobs.JobHandle _UPDATE_JOB_HANDLE { get; set; } 
 */
         }
 
